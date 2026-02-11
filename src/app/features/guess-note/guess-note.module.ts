@@ -1,7 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageGuessNoteComponent } from './components/page-guess-note/page-guess-note.component';
+import { NgModule } from '@angular/core';
+import { FormField } from '@angular/forms/signals';
 import { provideRouter, RouterModule, Routes } from '@angular/router';
+import { GuessNoteGameplay } from './components/guess-note-gameplay/guess-note-gameplay';
+import { GuessNoteSetup } from './components/guess-note-setup/guess-note-setup';
+import { PageGuessNoteComponent } from './components/page-guess-note/page-guess-note.component';
 
 export const routes: Routes = [
     {
@@ -13,9 +16,10 @@ export const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormField
   ],
   providers: [provideRouter(routes)],
-  declarations: [PageGuessNoteComponent]
+  declarations: [PageGuessNoteComponent, GuessNoteSetup, GuessNoteGameplay]
 })
 export class GuessNoteModule { }

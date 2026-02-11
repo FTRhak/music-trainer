@@ -1,6 +1,21 @@
-<p>
-  page-guess-note works!
-</p>
-
-♩ ♪ ♫ ♬ ♭ ♮ ♯ 𝄞 𝄢 𝄡 𝄀 𝄁 𝄂 𝄃 𝄄 𝄅 𝄆 𝄇 𝄈 𝄉 𝄊 𝄋 𝄌 𝄍 𝄎 𝄏 𝄐 𝄑 𝄒 𝄓 𝄔 𝄕 𝄖 𝄗 𝄘 𝄙 𝄚 𝄛 𝄜 𝄝
-  𝄞𝄢𝄡 𝄀𝄁𝄂 𝄃𝄄𝄅 𝄆𝄇𝄈 𝄉𝄊𝄋 𝄌𝄍𝄎 𝄏𝄐𝄑 𝄒𝄓𝄔 𝄕𝄖𝄗 𝄘𝄙𝄚 𝄛𝄜𝄝
+@if (isPlaying()) {
+  <section>
+    @if (gameplaySetup(); as gameplayData) {
+      <guess-note-gameplay [gameplaySetup]="gameplayData"></guess-note-gameplay>
+    }
+  </section>
+} @else {
+  <section class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <guess-note-setup (startGame)="onStartGame($event)"></guess-note-setup>
+        </div>
+      </div>
+    </div>
+  </section>
+}
+@if (false) {
+  ♩ ♪ ♫ ♬ ♭ ♮ ♯ 𝄞 𝄢 𝄡 𝄀 𝄁 𝄂 𝄃 𝄄 𝄅 𝄆 𝄇 𝄈 𝄉 𝄊 𝄋 𝄌 𝄍 𝄎 𝄏 𝄐 𝄑 𝄒 𝄓 𝄔 𝄕 𝄖 𝄗 𝄘 𝄙 𝄚 𝄛 𝄜 𝄝 𝄞𝄢𝄡 𝄀𝄁𝄂 𝄃𝄄𝄅 𝄆𝄇𝄈
+  𝄉𝄊𝄋 𝄌𝄍𝄎 𝄏𝄐𝄑 𝄒𝄓𝄔 𝄕𝄖𝄗 𝄘𝄙𝄚 𝄛𝄜𝄝
+}

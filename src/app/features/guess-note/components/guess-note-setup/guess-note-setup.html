@@ -1,0 +1,45 @@
+<form (submit)="onSubmit($event)">
+  <div class="mb-3">
+    <label> Toggle groups </label>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [formField]="guessNoteSetupForm.includeTrebleClef"
+        id="checkDefault1"
+      />
+      <label class="form-check-label" for="checkDefault1">𝄞</label>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [formField]="guessNoteSetupForm.includeBassClef"
+        id="checkDefault2"
+      />
+      <label class="form-check-label" for="checkDefault2">𝄢</label>
+    </div>
+  </div>
+  <!-- ---------------------------------------------------------- -->
+  <div class="mb-3">
+    <label> Time to choose </label>
+    <select class="form-select" [formField]="guessNoteSetupForm.timeToGuess">
+        @for(t of timeCases; track t) {
+          <option [value]="t">{{t}} s.</option>
+        }
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label> Count notes </label>
+    <select class="form-select" [formField]="guessNoteSetupForm.numberOfNotes">
+        @for(t of numberOfNotesCases; track t) {
+          <option [value]="t">{{t}}</option>
+        }
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary">Start</button>
+  </div>
+</form>
