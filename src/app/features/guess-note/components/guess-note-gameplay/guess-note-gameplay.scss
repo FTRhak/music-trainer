@@ -12,20 +12,25 @@
   overflow: hidden;
 }
 
+.notes-line {
+  transform: scaleX(3);
+}
+
 .notes-sub-line-top {
-  transform: translateY(2rem);
+  //transform: translateY(2rem);
+  transform: translateY(2rem) scaleX(3);
   opacity: 0.3;
 }
 
 .notes-sub-line-bottom {
-  transform: translateY(-2rem);
+  transform: translateY(-2rem) scaleX(3);
   opacity: 0.3;
 }
 
 .notes-clef {
   position: absolute;
   top: 6rem;
-  left: 0.3rem;
+  left: -2.7rem;
 
   &.clef-treble:before {
     content: '𝄞';
@@ -60,7 +65,7 @@ $listNotes: (
 
   &:before {
     content: '♩';
-    font-size: 3rem;
+    //font-size: 3rem;
   }
 
   @each $note in $listNotes {
