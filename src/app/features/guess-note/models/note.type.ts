@@ -29,4 +29,25 @@ export enum Note {
   B4 = 'B4',*/
 }
 
+export type NoteName = 'do' | 're' | 'mi' | 'fa' | 'sol' | 'la' | 'si';
+
+export type NoteNameMap = { [key in Note]: NoteName };
+
+export const NoteNames: NoteNameMap = {
+  [Note.C1]: 'do',
+  [Note.D1]: 're',
+  [Note.E1]: 'mi',
+  [Note.F1]: 'fa',
+  [Note.G1]: 'sol',
+  [Note.A1]: 'la',
+  [Note.B1]: 'si',
+  [Note.C2]: 'do',
+  [Note.D2]: 're',
+  [Note.E2]: 'mi',
+  [Note.F2]: 'fa',
+  [Note.G2]: 'sol',
+  [Note.A2]: 'la',
+  [Note.B2]: 'si',
+};
+
 export const NoteValues = Object.values(Note);

@@ -1,7 +1,24 @@
-import { Clef } from "./clef.type";
-import { Note } from "./note.type";
+import { Clef } from './clef.type';
+import { Note, NoteName, NoteNames } from './note.type';
 
-export interface NoteModel {
-  note: Note;
-  clef: Clef;
+export class NoteModel {
+  public clef: Clef;
+  public note: Note;
+  public noteName: NoteName;
+
+  constructor(clef: Clef, note: Note) {
+    this.clef = clef;
+    this.note = note;
+    this.noteName = NoteNames[note];
+  }
+}
+
+export class NoteSimpleModel {
+  public note: Note;
+  public noteName: NoteName;
+
+  constructor(note: Note) {
+    this.note = note;
+    this.noteName = NoteNames[note];
+  }
 }

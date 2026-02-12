@@ -5,20 +5,20 @@ import { GuessNoteGameplaySetupModel } from '../../models';
   selector: 'app-page-guess-note',
   standalone: false,
   templateUrl: './page-guess-note.component.html',
-  styleUrls: ['./page-guess-note.component.scss']
+  styleUrls: ['./page-guess-note.component.scss'],
 })
 export class PageGuessNoteComponent implements OnInit {
   public readonly isPlaying = signal(false);
-  public readonly gameplaySetup = signal<GuessNoteGameplaySetupModel | null>(null);
+  public readonly gameplaySetup = signal<GuessNoteGameplaySetupModel | null>(
+    null,
+  );
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   public onStartGame(ev: GuessNoteGameplaySetupModel) {
     this.gameplaySetup.set(ev);
     this.isPlaying.set(true);
   }
-
 }

@@ -1,14 +1,47 @@
 @if(gameplay(); as gameplay) {
-    <div class="guess-note-render">
-        <div class="position-relative">
-            <div class="notes-clef clef-{{gameplay.clef}}"></div>
-            <div class="notes-sub-line-top">𝄛𝄛𝄛</div>
-            <div class="notes-line">𝄛𝄛𝄛</div>
-            <div class="notes-sub-line-bottom">𝄛𝄛𝄛</div>
-            <div class="note-item note-type-{{gameplay.clef}} note-{{gameplay.note}}"></div>
-        </div>
-    </div>
-    
+<div class="guess-note-render">
+  <div class="position-relative">
+    <div class="notes-clef clef-{{gameplay.clef}}"></div>
+    <div class="notes-sub-line-top">𝄛𝄛𝄛</div>
+    <div class="notes-line">𝄛𝄛𝄛</div>
+    <div class="notes-sub-line-bottom">𝄛𝄛𝄛</div>
+    <div
+      class="note-item note-type-{{gameplay.clef}} note-{{gameplay.note}}"
+    ></div>
+  </div>
+</div>
+<div class="pb-4 px-3">
+  <div
+    class="progress"
+    role="progressbar"
+    aria-label="Time left"
+    aria-valuenow="0"
+    aria-valuemin="0"
+    aria-valuemax="100"
+  >
+    <div class="progress-bar" style.width="{{timer()}}%"></div>
+  </div>
+</div>
+{{countQuestionsPassed()}}/{{gameplaySetup().numberOfNotes}}
+<div class="guess-note-notes-answer">
+  @for(note of notesToSelect(); track note.noteName) {
+  <button class="btn btn-secondary" (click)="onSelectNote(note)">
+    <div>{{note.noteName}}</div>
+    <div>{{note.note}}</div>
+  </button>
+  }
+</div>
+} @if(isGameFinished()) {
+<div class="dialog-backdrop"></div>
+<dialog open="true" class="guess-note-game-finished">
+  <h2>Game finished!</h2>
+  <p>
+    Your result: {{countCorrectAnswers()}}/{{gameplaySetup().numberOfNotes}}
+  </p>
+  <div>
+    <button class="btn btn-secondary btn-action" [routerLink]="'/'">
+      Exit
+    </button>
+  </div>
+</dialog>
 }
-
-{{gameplay() | json}}

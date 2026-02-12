@@ -34,7 +34,6 @@
   &.clef-bass:before {
     content: '𝄢';
   }
-
 }
 
 $listNotes: (
@@ -51,7 +50,7 @@ $listNotes: (
   'F2',
   'G2',
   'A2',
-  'B2',
+  'B2'
 );
 
 .note-item {
@@ -69,6 +68,48 @@ $listNotes: (
       transform: translateY(#{-0.3923rem * (index($listNotes, $note) - 1)});
     }
   }
-
 }
 
+//----------------------------------------------
+
+.guess-note-notes-answer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.progress {
+  --bs-progress-bar-transition: width 0.1s linear;
+}
+
+//----------------------------------------------
+.dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  //filter: blur(4px);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+.guess-note-game-finished {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  //filter: blur(4px);
+  top: 25%;
+  z-index: 1000;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .btn-action {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

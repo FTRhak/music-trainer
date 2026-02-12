@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, output, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  output,
+  signal,
+} from '@angular/core';
 import { form } from '@angular/forms/signals';
 import { GuessNoteGameplaySetupModel, GuessNoteSetupModel } from '../../models';
 
@@ -22,7 +27,9 @@ export class GuessNoteSetup {
   public readonly timeCases = [1, 2, 3, 4, 5, 10, 20];
   public readonly numberOfNotesCases = [5, 10, 20, 30, 50];
 
-  public readonly guessNoteSetupForm = form<GuessNoteSetupModel>(this.guessNoteSetupModel);
+  public readonly guessNoteSetupForm = form<GuessNoteSetupModel>(
+    this.guessNoteSetupModel,
+  );
 
   public onSubmit(event: Event) {
     event.preventDefault();

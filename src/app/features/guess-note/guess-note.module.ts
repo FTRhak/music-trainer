@@ -7,19 +7,15 @@ import { GuessNoteSetup } from './components/guess-note-setup/guess-note-setup';
 import { PageGuessNoteComponent } from './components/page-guess-note/page-guess-note.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: PageGuessNoteComponent
-    }
+  {
+    path: '',
+    component: PageGuessNoteComponent,
+  },
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormField
-  ],
+  imports: [CommonModule, RouterModule, FormField],
   providers: [provideRouter(routes)],
-  declarations: [PageGuessNoteComponent, GuessNoteSetup, GuessNoteGameplay]
+  declarations: [PageGuessNoteComponent, GuessNoteSetup, GuessNoteGameplay],
 })
-export class GuessNoteModule { }
+export class GuessNoteModule {}

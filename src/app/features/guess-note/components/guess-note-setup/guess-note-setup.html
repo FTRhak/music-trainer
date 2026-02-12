@@ -24,18 +24,18 @@
   <div class="mb-3">
     <label> Time to choose </label>
     <select class="form-select" [formField]="guessNoteSetupForm.timeToGuess">
-        @for(t of timeCases; track t) {
-          <option [value]="t">{{t}} s.</option>
-        }
+      @for(t of timeCases; track t) {
+      <option [value]="t">{{t}} s.</option>
+      }
     </select>
   </div>
 
   <div class="mb-3">
     <label> Count notes </label>
     <select class="form-select" [formField]="guessNoteSetupForm.numberOfNotes">
-        @for(t of numberOfNotesCases; track t) {
-          <option [value]="t">{{t}}</option>
-        }
+      @for(t of numberOfNotesCases; track t) {
+      <option [value]="t">{{t}}</option>
+      }
     </select>
   </div>
 

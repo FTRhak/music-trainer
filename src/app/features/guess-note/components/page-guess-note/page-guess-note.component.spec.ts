@@ -11,9 +11,8 @@ describe('PageGuessNoteComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageGuessNoteComponent ]
-    })
-    .compileComponents();
+      declarations: [PageGuessNoteComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

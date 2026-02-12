@@ -6,7 +6,7 @@ import { CoreModule } from './core/core.module';
   selector: 'app-root',
   imports: [RouterOutlet, CoreModule],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('music-trainer');

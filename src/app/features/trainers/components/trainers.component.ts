@@ -4,13 +4,10 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-trainers',
   standalone: false,
   templateUrl: './trainers.component.html',
-  styleUrls: ['./trainers.component.scss']
+  styleUrls: ['./trainers.component.scss'],
 })
 export class TrainersComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

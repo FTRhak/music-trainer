@@ -1,4 +1,11 @@
-import { Directive, ElementRef, HostBinding, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import { LanguageService } from '../services/language.service';
 
 @Directive({
@@ -11,7 +18,10 @@ export class TranslateDirective implements OnChanges {
   @HostBinding('innerHtml')
   public content!: string;
 
-  constructor(private readonly el: ElementRef<HTMLElement>, private readonly ln: LanguageService) {}
+  constructor(
+    private readonly el: ElementRef<HTMLElement>,
+    private readonly ln: LanguageService,
+  ) {}
 
   public ngOnChanges(changes: SimpleChanges) {
     if (this.el?.nativeElement) {

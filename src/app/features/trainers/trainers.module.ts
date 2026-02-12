@@ -4,18 +4,15 @@ import { TrainersComponent } from './components/trainers.component';
 import { provideRouter, RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: TrainersComponent
-    }
+  {
+    path: '',
+    component: TrainersComponent,
+  },
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
+  imports: [CommonModule, RouterModule],
   providers: [provideRouter(routes)],
-  declarations: [TrainersComponent]
+  declarations: [TrainersComponent],
 })
-export class TrainersModule { }
+export class TrainersModule {}
